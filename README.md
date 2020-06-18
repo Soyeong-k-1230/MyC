@@ -92,9 +92,9 @@ Python Web Framework
 
  ### 배포 서버 URL
 
-준비중 입니다!
+http://ec2-18-220-134-245.us-east-2.compute.amazonaws.com/
 
-
+(소셜로그인 수정중)
 
  ### 기타(느낀점)
 
