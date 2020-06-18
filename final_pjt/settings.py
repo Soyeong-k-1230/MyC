@@ -26,8 +26,7 @@ SECRET_KEY = 'n0_ob+9v8h#uw(39lhzgrzqn$z*qy!jop5uwbnzhzg58y0(3zd'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '.compute.amazonaws.com',
-    '*',
+
 ]
 
 
@@ -144,7 +143,6 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 AUTH_USER_MODEL = 'accounts.User'
 
