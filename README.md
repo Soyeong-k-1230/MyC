@@ -94,8 +94,6 @@ Python Web Framework
 
 http://ec2-18-220-134-245.us-east-2.compute.amazonaws.com/
 
-(소셜로그인 수정중)
-
  ### 기타(느낀점)
 
 - 모델링의 중요성을 깨달았다. 처음 데이터를 잘 구조화 시키면 개발할 때 매우 편리하다는 생각을 하게 되었다. 

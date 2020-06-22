@@ -7,8 +7,13 @@
                   <div class="row">
                     {% for movie in final_top_a %}
                       <div class="col text-center img-hover-zoom" id="movie-{{ movie.id }}" onclick="goDetail(event, `{% url 'movies:movie_detail' movie.pk %}`)">
-                        <img class="img-fluid" style="height: 270px;"
-                          src="https://image.tmdb.org/t/p/original/{{ movie.poster_path }}" alt="Image Poster"/>
+                        {% if movie.poster_path %}
+                          <img class="img-fluid" style="height: 270px;"
+                            src="https://image.tmdb.org/t/p/original/{{ movie.poster_path }}" alt="Image Poster" />
+                        {% else %}
+                          <img class="img-fluid" style="height: 270px;"
+                            src="https://media.comicbook.com/files/img/default-movie.png" alt="Image Poster" />
+                        {% endif %}
                       </div>
                     {% endfor %}
                   </div>
@@ -17,8 +22,13 @@
                   <div class="row">
                     {% for movie in final_top_b %}
                       <div class="col text-center img-hover-zoom" id="movie-{{ movie.id }}" onclick="goDetail(event, `{% url 'movies:movie_detail' movie.pk %}`)">
-                          <img class="img-fluid" style="height: 270px;" 
-                            src="https://image.tmdb.org/t/p/original/{{ movie.poster_path }}" alt="Image 6"/>
+                        {% if movie.poster_path %}
+                          <img class="img-fluid" style="height: 270px;"
+                            src="https://image.tmdb.org/t/p/original/{{ movie.poster_path }}" alt="Image Poster" />
+                        {% else %}
+                          <img class="img-fluid" style="height: 270px;"
+                            src="https://media.comicbook.com/files/img/default-movie.png" alt="Image Poster" />
+                        {% endif %}
                       </div>
                     {% endfor %}
                   </div>

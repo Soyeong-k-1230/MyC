@@ -57,9 +57,12 @@ def index(request):
             year_dict = {}
             lang_dict = {}
             genre_dict = {}
+            genre_dict_w = {}
             year_sorted = []
             lang_sorted = []
             genre_sorted = []
+            genre_sorted_w = []
+
             cnt = 0
             while cnt <= 10:
                 # 개봉 날짜별 추천 3개
@@ -84,7 +87,7 @@ def index(request):
                         break
                     
                 # 사용자가 본 영화 기준 언어 추천
-                for movie in watched_movies:
+                for movie in user_watched:
                     lang = movie.original_language
                     if lang not in lang_dict:
                         lang_dict[lang] = 1
@@ -116,6 +119,27 @@ def index(request):
                 for i in range(4):  
                     try: 
                         genre_rec = Genre.objects.get(name=genre_sorted[i][0])
+                        movie_rec = genre_rec.movie_genres.all().order_by('?')[0]
+                        if movie_rec in saved_unseen or movie_rec in user_watched:
+                            continue
+                        if movie_rec in user_liked or movie_rec in user_hated:
+                            continue
+                        final_rec.append(movie_rec)
+                        cnt += 1
+                    except:
+                        break
+                # 사용자가 본 영화 기준 장르 추천
+                for movie in user_watched:
+                    movie_genres = movie.genre_ids.all()
+                    for genre in movie_genres:
+                        if genre.name not in genre_dict_w:
+                            genre_dict_w[genre.name] = 1
+                        else:
+                            genre_dict_w[genre.name] += 1
+                    genre_sorted_w = sorted(genre_dict_w.items(), key=lambda x: x[1], reverse=True)
+                for i in range(4):  
+                    try: 
+                        genre_rec = Genre.objects.get(name=genre_sorted_w[i][0])
                         movie_rec = genre_rec.movie_genres.all().order_by('?')[0]
                         if movie_rec in saved_unseen or movie_rec in user_watched:
                             continue
