@@ -1,0 +1,13 @@
+.profile-wrapper-1 {
+    margin-top: 120px;
+}
+
+.select-menu-button:hover {
+    color: #39CCCC;
+    cursor: pointer;
+}
+
+.profile-post:hover {
+    cursor: pointer;
+    opacity: 0.3;
+}

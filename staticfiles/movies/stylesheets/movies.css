@@ -1,0 +1,53 @@
+.carousel-inner {
+    width:100%;
+    max-height: 600px !important;
+}
+
+.carousel-main-img {
+    opacity: 0.4;
+    object-fit: fill;
+}
+.carousel-item {
+    position: relative;
+}
+
+.tag {
+    float: left;
+    position: absolute;
+    left: 10%;
+    top: 10%;
+    z-index: 1000;
+    padding: 5px;
+    color: #FFFFFF;
+    font-weight: bold;
+    
+}
+.tag1{
+    float: left;
+    position: absolute;
+    left: 10%;
+    top: 23%;
+    z-index: 1000;
+    padding: 5px;
+    color: #FFFFFF;
+    font-size: 1.4rem;
+    width: 43rem;
+}
+
+.tag2{
+    float: left;
+    position: absolute;
+    left: 9.5%;
+    top: 16%;
+    z-index: 1000;
+    padding: 5px;
+    font-size: 1.5rem;
+}
+.tag-title {
+    font-size: 95px;
+    width: 500px;
+    display: inline-block;
+}
+.rec-img {
+    height: 300px;
+}

@@ -1,0 +1,38 @@
+.card-hover-zoom{
+    overflow: hidden;
+    background-color:rgb(31, 31, 31) !important;
+    border-radius: 15px !important;
+    border: 1px solid black !important;
+}
+
+.card-hover-zoom img {
+    transition: transform .5s ease;
+    width: auto;
+    height: auto;
+    max-width: 13rem;
+    max-height: 18rem;
+}
+
+.card-hover-zoom:hover{
+    cursor: pointer;
+}
+
+.card-hover-zoom:hover img {
+    transform: scale(1.7);
+    opacity: 0.4;   
+}
+
+.card-hover-zoom i{
+    visibility: hidden;
+    margin: 0;
+}
+
+.card-hover-zoom:hover i{
+    position: relative;
+    visibility: visible;
+    font-size: 30px;
+}
+
+.card-hover-zoom div{
+    position: relative;
+}
