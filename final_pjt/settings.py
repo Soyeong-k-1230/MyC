@@ -21,15 +21,15 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = 'n0_ob+9v8h#uw(39lhzgrzqn$z*qy!jop5uwbnzhzg58y0(3zd'
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'n0_ob+9v8h#uw(39lhzgrzqn$z*qy!jop5uwbnzhzg58y0(3zd')
+SECRET_KEY = 'n0_ob+9v8h#uw(39lhzgrzqn$z*qy!jop5uwbnzhzg58y0(3zd'
+# SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'n0_ob+9v8h#uw(39lhzgrzqn$z*qy!jop5uwbnzhzg58y0(3zd')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
-DEBUG = bool(os.environ.get('DJANGO_DEBUG', False))
+DEBUG = False
+# DEBUG = bool(os.environ.get('DJANGO_DEBUG', False))
 
 ALLOWED_HOSTS = [
-
+    '127.0.0.1', '.herokuapp.com'
 ]
 
 
@@ -72,7 +72,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware'
 ]
 
 ROOT_URLCONF = 'final_pjt.urls'
@@ -100,12 +99,24 @@ WSGI_APPLICATION = 'final_pjt.wsgi.application'
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
 
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#    }
+#}
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'djangogirls',
+        'USER': 'name',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
+
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 
