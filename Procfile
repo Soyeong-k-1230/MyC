@@ -1,1 +1,1 @@
-web: gunicorn MyC.wsgi --log-file -
+web: gunicorn final_pjt.wsgi --log-file -
